@@ -46,7 +46,7 @@ class Configuration(BaseModel):
     )
 
     search_engine: str = Field(
-        default="tavily",
+        default="google",
         metadata={"description": "The search engine to use for web search. Options: google, tavily."},
     )
 
