@@ -1,0 +1,50 @@
+[project]
+name = "agentdemo"
+version = "0.1.0-alpha"
+description = "Demo agent for testing"
+authors = [
+    {name = "xiaming.cxm",email = "xiaming.cxm@alibaba-inc.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "python-dotenv (>=1.1.1,<2.0.0)",
+    "langchain-core (>=0.3.72,<0.4.0)",
+    "langgraph (>=0.5.4,<0.6.0)",
+    "instructor (>=1.10.0,<2.0.0)",
+    "openai (>=1.0.0,<2.0.0)",
+    "google-genai (>=1.5.0,<2.0.0)",
+    "colorlog (>=6.8.0,<7.0.0)",
+    "pydantic (>=2.0.0,<3.0.0)",
+    "langchain-tavily (>=0.2.11,<0.3.0)",
+    "langchain-text-splitters (>=0.3.0,<0.4.0)",
+    "protobuf (>=5.29.0,<6.0.0)",
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pytest-cov = "*"
+python-dotenv = "*"
+black = "*"
+flake8 = "*"
+mypy = "*"
+autoflake = "*"
+isort = "*"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+markers = [
+    "unit: marks tests as unit tests",
+    "integration: marks tests as integration tests",
+    "slow: marks tests as slow running",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
